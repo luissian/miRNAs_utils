@@ -131,7 +131,7 @@ if __name__ == '__main__':
     ## necesitamos el fichero no la secuencia
     # mi_rnas = read_mirna_file(arguments.mirnafile)
     blast_parameters = '"6 , qseqid , sseqid , pident ,  qlen , length , mismatch , gapopen , evalue , bitscore , sstart , send , qstart , qend , sseq , qseq"'
-    match_heading = 'Organism\tmiRNA\tOrg. Accession\tqseqid\tsseqid\tpident\tqlen\tlength\tmismatch\tgapopen\tevalue\tbitscore\tsstart\tsend\tqstart\tqend\tsseq\tqseq'
+    match_heading = 'Organism\tmiRNA\tOrg. Accession\tpident\tqlen\tlength\tmismatch\tgapopen\tevalue\tbitscore\tsstart\tsend\tqstart\tqend\tsseq\tqseq'
     rc = RunnerConfig(batch_size=arguments.thread, num_processors = arguments.thread)
     reader = Reader(data_reader = BlastReader(arguments.mirnafile, (arguments.blastdbDir, blastdb_folder)),runner_config = rc)
     writer = Writer(data_writer=BlastWriter(out_dir, match_heading), runner_config= rc)
