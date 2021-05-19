@@ -22,12 +22,12 @@ class BlastFunction(Function):
         # resultado = blast(mirna_id, dir_id, params)
         #cline = NcbiblastnCommandline(db="/media/bioinfo/Massive_data/tesis_micro_RNA/parelizacion/test_genomas_ref_gastrointestinal/blastdb/Dysgonomonas_mossii_GCF_000376405/Dysgonomonas_mossii_GCF_000376405",task = 'blastn-short', evalue=0.001,  outfmt =6, num_threads=1, query=query_fasta_file)
 
-        cline = NcbiblastnCommandline(db=blast_db_name, task='blastn-short', evalue=0.001,  outfmt =  self.__params ,num_threads=1, query=query_fasta_file)
+        cline = NcbiblastnCommandline(db=blast_db_name, task='blastn-short', strand='minus', evalue=0.001,  outfmt =  self.__params ,num_threads=1, query=query_fasta_file)
 
         out, err = cline()
         out_lines = out.splitlines( )
         if len (out_lines) > 0 :
-            out_lines.insert(0, self.__parameters_output)
+            #out_lines.insert(0, self.__parameters_output)
             resultado = {specie_name:out_lines}
             #resultado = {specie_name:['hemos encontrado',str(len(out_lines)), 'matches']}
 

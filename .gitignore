@@ -1,7 +1,9 @@
-_pycache__/
+__pycache__/
+utils/__pycache__/
 *.py[cod]
 *$py.class
 venv/
+
 
 # Distribution / packaging
 alemanPyUtils/
